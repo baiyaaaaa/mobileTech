@@ -39,7 +39,7 @@ A useful tools or tips list for mobile web application developing
  
  [各种各样的媒体查询收集](http://nmsdvid.com/snippets/ "各种各样的媒体查询收集")
  
- [css3 动画在线制作器](http://ecd.tencent.com/css3/tools.html "css3动画在线制作器")
+ [css3 动画在线制作器](http://css3lib.alloyteam.com/#animation/AnimatedButtons "css3动画在线制作器")
  
  [css3 渐变在线制作器](http://www.colorzilla.com/gradient-editor/ "css3渐变在线制作器")
  
@@ -97,6 +97,10 @@ Firefox 浏览器内置了 `自定义设计视图` 的功能，可以通过 `Fir
 [It’s not a web app. It’s an app you install from the web.](http://blog.forecast.io/its-not-a-web-app-its-an-app-you-install-from-the-web/)
 
 [当前 WEB APP 开发的最佳实践](http://lyric.im/best-practice-for-web-app-development/)
+
+[如何自适应网页屏幕](https://www.icloud.com/keynote/AwBWCAESEJd5uucfBPGt6KPotb3tNfsaKm-Q7fqs2-4ojmPoPJuWZCvjYgKl5jEf1URdRgdgNHe38BTzeF3DK7q1ewMCUCAQEEIJ85mw21ii_AwybOqxoF-V02v51Vdg855ED4qVA_8bXr#Mobile_Webpage_如何自适应屏幕_2)
+以及[配套的解决方案](https://github.com/unbug/generator-webappstarter/blob/master/app/templates/app/src/util/MetaHandler.js)
+
 
 
 ##来自[maxzhang](https://github.com/maxzhang "ava")的一些移动端经验总结干货
@@ -171,6 +175,7 @@ meta标签，这些meta标签在开发webapp时起到非常重要的作用
 
 [此像素非彼像素](http://www.w3cplus.com/css/A-pixel-is-not-a-pixel-is-not-a-pixel.html "pixel")
 
+
 ##移动开发事件
 
 [手机浏览器常用手势动作监听封装](http://wo.poco.cn/manson/post/id/268780)
@@ -230,17 +235,6 @@ meta标签，这些meta标签在开发webapp时起到非常重要的作用
 		window.onorientationchange = orientationChange;
 	});
  
-
-###双手指滑动事件：
-
-	// 双手指滑动事件
-	addEventListener('load',　　function(){ window.onmousewheel = twoFingerScroll;},
-		false              // 兼容各浏览器，表示在冒泡阶段调用事件处理程序 (true 捕获阶段)
-	);
-	function twoFingerScroll(ev) {
-		var delta =ev.wheelDelta/120;              //对 delta 值进行判断(比如正负) ，而后执行相应操作
-		return true;
-	};
 
 
 ###JS 单击延迟
@@ -823,7 +817,7 @@ ios的safari提供一种“隐私模式”，如果你的webapp考虑兼容这�
 
 	// 判断是否为 iPhone ：
 	function isAppleMobile() {
-		return (navigator.platform.indexOf('iPad') != -1);
+		return (navigator.platform.indexOf('iPhone') != -1);
 	};
 ###localStorage:
 
@@ -1009,8 +1003,8 @@ worker:
 	  count = count++;
 	  postMessage({targetURL:data.url,count:count});
 	});
-
-	
+##Web移动端Fixed布局的解决方案
+<http://efe.baidu.com/blog/mobile-fixed-layout/>
 
 ##ios上background-attachment:fixed不能正常工作
 
@@ -1234,6 +1228,8 @@ charles 选择静态的html页面文件-saveResponse。之后把这个文件保�
 
 
 ###微信浏览器
+
+微信浏览器的各种bug汇总 （x5内核） <http://www.qianduan.net/qqliu-lan-qi-x5nei-he-wen-ti-hui-zong/>
 
 因为微信浏览器屏蔽了一部分链接图片，所以需要引导用户去打开新页面，可以用以下方式判断微信浏览器的ua
 
